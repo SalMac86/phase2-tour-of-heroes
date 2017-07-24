@@ -7,7 +7,6 @@ import { HeroService } from './hero.service';
 @Component({
   selector: 'my-heroes',
   template: `
-    <h1>{{title}}</h1>
     <h2>My Heroes</h2>
     <ul class="heroes">
       <li *ngFor="let hero of heroes" 
@@ -68,7 +67,7 @@ import { HeroService } from './hero.service';
         border-radius: 4px 0 0 4px;
       }
     `],
-    providers: [HeroService]
+    providers: []
   // templateUrl: './app.component.html',
   // styleUrls: ['./app.component.css']
 })
@@ -80,13 +79,13 @@ export class HeroesComponent implements OnInit {
     this.getHeroes();
   }
   
-  title = 'Tour of Heroes';
+  
   selectedHero: Hero;
   heroes: Hero[];
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
   }
   getHeroes(): void {
-    this.heroService.getHeroesSlowlyl().then(heroes => this.heroes = heroes);
+    this.heroService.getHeroesSlowly().then(heroes => this.heroes = heroes);
   }
 }
