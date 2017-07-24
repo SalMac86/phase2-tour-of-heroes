@@ -33,4 +33,9 @@ hero: Hero;
     this.location.back();
   }
   
+  save(): void {
+    this.heroService.update(this.hero)
+      .then(() => this.goBack());
+  }
+  
 }
